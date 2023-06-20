@@ -295,3 +295,104 @@ header .orange-circle{
     top: 3rem;
     left: 6rem;
 }
+.services .linea .card.two{
+    position: absolute;
+    top: -3rem;
+    left: 19rem;
+}
+.services .linea .card.three{
+    position: absolute;
+    top: 13rem;
+    left: 33rem;
+}
+.services .linea .card.four{
+    position: absolute;
+    top: 7rem;
+    left: 46rem;
+}
+
+/* EVENTS */
+.events{
+    width: 100%;
+    max-width: 80rem;
+    margin: 0 auto;
+    padding-bottom: 10rem;
+}
+.events .top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 3rem;
+}
+.events .top h2{
+    font-family: 'Bebas Neue';
+    font-size: 2.5rem;
+    letter-spacing: 0.07rem;
+}
+.events .top .orange{
+    font-family: 'Bebas Neue';
+    color: var(--color-orange);
+    letter-spacing: 0.07rem;
+}
+.events .top .arrow-container{
+    background-color: var(--color-orange);
+    width: 5.6rem;
+    height: 2rem;
+    border-radius: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.events .bottom {
+    display: flex;
+    justify-content: space-between;
+}
+.events .bottom .card{
+    border: 1px solid var(--color-white);
+    border-radius: 0.75rem;
+    padding: 1.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 33%;
+    max-width: 400px;
+}
+.events .bottom .card h3{
+    font-family: 'Bebas Neue';
+    letter-spacing: 0.07rem;
+    font-size: 1.5rem;
+}
+.events .bottom .card p{
+    font-family: 'Exo 2';
+    opacity: 0.7;
+}
+.events .bottom .btn{
+    font-family: 'Mulish';
+    color: var(--color-orange);
+    padding: 1rem 0;
+    width: 9rem;
+    border: 0.1rem solid var(--color-orange);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7rem;
+    font-weight: 700;
+}
+
+/* LATEST*/
+.latest{
+    width: 100%;
+    max-width: 80rem;
+    margin: 0 auto;
+}
+.latest h2{
+    font-family: 'Bebas Neue';
+    letter-spacing: 0.07rem;
+    font-size: 3rem;
+    text-align: center;
+    padding-bottom: 3rem;
+}
+.latest img{
+    width: 100%;
+}
