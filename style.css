@@ -722,7 +722,8 @@ footer{
     column-gap: 3rem;
     padding-bottom: 4rem;
 }
-footer h4{
+footer h4,
+footer h2{
     font-family: 'Exo 2';
     font-weight: 700;
     font-size: 1.1rem;
