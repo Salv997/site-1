@@ -744,6 +744,9 @@ footer .colonna p{
     nav .menu{
         display: none;
     }
+    .arrow-container{
+        display: none!important;
+    }
     header{overflow-x: hidden;}
     footer{
         padding-left: 1rem;
