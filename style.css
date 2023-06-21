@@ -19,7 +19,7 @@ body{
 /* NAV */
 nav{
     position: fixed;
-    top: 1.5rem;
+    top: 0rem;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -27,6 +27,8 @@ nav{
     max-width: 80rem;
     justify-content: space-between;
     z-index: 999;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
 }
 nav .logo{
     text-transform: uppercase;
@@ -52,7 +54,9 @@ nav .menu ul li a svg{
 nav .menu ul li a:hover{
     color: var(--color-orange);
 }
-
+nav.scrolled{
+    background-color: var(--color-black);
+}
 /* HEADER */
 header{
     width: 100%;
@@ -135,8 +139,43 @@ header .orange-circle{
     background: rgba(242, 99, 38, 0.4);
     filter: blur(3rem);
 }
+header .blue-circle{
+    position: absolute;
+    left: 18rem;
+    top: 24%;
+    border-radius: 50%;
+    height: 10rem;
+    width: 10rem;
+    background: rgba(0, 196, 244, 0.3);
+    filter: blur(3.9rem);
+}
+header .black-fade{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    height: 8rem;
+    background:  linear-gradient(180deg, rgba(0, 0, 0, 0) 29.07%, #03030A 76.61%);;
+}
+@media(max-width: 60rem){
+    header .grid{
+        gap: 2rem;
+        padding-left: 1rem;
+    }
+    header .grid .right{
+        padding-right: 1rem;
+    }
+    header .grid .left h1{
+        font-size: 2.5rem;
+    }
+    header .grid .left p{
+       font-size: 1rem;
+       line-height: normal; 
+    }
+}
 
 /* EXPERIENCE */
+
 .experience{
     max-width: 80rem;
     width: 100%;
@@ -247,6 +286,46 @@ header .orange-circle{
     filter: blur(5rem);
 }
 
+@media(max-width: 60rem){
+    .experience .orange-circle{display: none;}
+    .experience{padding-left: 1rem; padding-right: 1rem;}
+    .experience .grid{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .experience .grid .left .image-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: calc(100vw - 2rem);
+        height: 34em;
+        position: relative;
+    }
+    .experience .grid .left .image-container img{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: calc(100vw - 2rem);
+    }
+    .experience .grid .right{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        justify-content: center;
+        position: relative;
+        align-items: center;
+    }
+    .experience .left h2{
+        font-size: 1.7rem;
+    }
+    .experience .left p{
+        width: auto;
+    }
+
+}
+
+/* SERVICES */
 .services{
     max-width: 80rem;
     width: 100%;
@@ -257,11 +336,14 @@ header .orange-circle{
 }
 .services .container{
     display: flex;
+    position:relative;
 }
 .services h2{
     font-family: 'Bebas Neue';
     font-size: 3rem;
-    width: 20rem;
+    width: 22rem;
+    position: relative;
+    z-index: 100;
 }
 .services .svg-arrow{
     padding-top: 1.8rem;
@@ -285,6 +367,8 @@ header .orange-circle{
     color: var(--color-orange);
     align-items: center;
     gap: 0.5rem;
+    user-select: none;
+    cursor: pointer;
 }
 .services .container .linea{
     position: relative;
@@ -310,6 +394,16 @@ header .orange-circle{
     top: 7rem;
     left: 46rem;
 }
+.services .blue-circle{
+    position: absolute;
+    left: -7rem;
+    top: -4rem;
+    border-radius: 50%;
+    height: 15rem;
+    width: 15rem;
+    background: rgba(37, 32, 64, 0.8);
+    filter: blur(3.9rem);
+}
 
 /* EVENTS */
 .events{
@@ -317,6 +411,7 @@ header .orange-circle{
     max-width: 80rem;
     margin: 0 auto;
     padding-bottom: 10rem;
+    position: relative
 }
 .events .top{
     display: flex;
@@ -356,6 +451,8 @@ header .orange-circle{
     gap: 1.5rem;
     width: 33%;
     max-width: 400px;
+    position: relative;
+    z-index: 100;
 }
 .events .bottom .card h3{
     font-family: 'Bebas Neue';
@@ -379,12 +476,44 @@ header .orange-circle{
     gap: 0.7rem;
     font-weight: 700;
 }
+.events .dark-circle{
+    position: absolute;
+    left: 50%;
+    top: -3rem;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    height: 20rem;
+    width: 20rem;
+    background: #232323;
+    filter: blur(4rem);
+}
+@media(max-width: 60rem){
+    .events{
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    .events .dark-circle{display: none;}
+    .events .top{
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .events .bottom{
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    .events .bottom .card{
+        width: 100%;
+        max-width: 30rem;
+    }
+}
 
 /* LATEST*/
 .latest{
     width: 100%;
     max-width: 80rem;
     margin: 0 auto;
+    padding-bottom: 10rem;
+    position: relative;
 }
 .latest h2{
     font-family: 'Bebas Neue';
@@ -392,7 +521,237 @@ header .orange-circle{
     font-size: 3rem;
     text-align: center;
     padding-bottom: 3rem;
+    position: relative;
+    z-index:100;
 }
-.latest img{
+.latest .container{
+    position: relative;
+}
+.latest .container svg{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.latest .container img{
     width: 100%;
+}
+.latest .orange-circle{
+    position: absolute;
+    left: 50%;
+    top: -15rem;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    height: 40rem;
+    width: 40rem;
+    background: rgba(242, 99, 38, 0.21);
+    filter: blur(4rem);
+}
+@media(max-width: 60rem){
+    .latest{
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    .latest h2{
+        font-size: 2rem;
+    }
+    .latest .orange-circle{display: none;}
+    .latest svg{
+        width: 70px;
+    }
+}
+/* EQUIPMENT */
+.equipment{
+    width: 100%;
+    max-width: 80rem;
+    margin: 0 auto;
+    padding-bottom: 10rem;
+}
+.equipment .top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 3rem;
+}
+.equipment .top h2{
+    font-family: 'Bebas Neue';
+    font-size: 2.5rem;
+    letter-spacing: 0.07rem;
+}
+.equipment .top .orange{
+    font-family: 'Bebas Neue';
+    color: var(--color-orange);
+    letter-spacing: 0.07rem;
+}
+.equipment .top .arrow-container{
+    background-color: var(--color-orange);
+    width: 5.6rem;
+    height: 2rem;
+    border-radius: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.equipment .bottom {
+    display: flex;
+    justify-content: space-between;
+}
+.equipment .bottom .card{
+    border-radius: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 33%;
+    max-width: 400px;
+}
+@media(max-width: 60rem){
+    .equipment{
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    .equipment .top{
+        flex-direction: column;
+    }
+    .equipment .bottom {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .equipment .bottom .card{
+        width: 100%;
+    }
+}
+
+/* INPUT */
+.reservation{
+    width: 100%;
+    max-width: 80rem;
+    margin: 0 auto;
+    padding-bottom: 10rem;
+}
+.reservation .top h2{
+    font-family: 'Bebas Neue';
+    font-size: 2.5rem;
+    letter-spacing: 0.07rem;
+    text-align: center;
+    padding-bottom: 3rem;
+}
+.reservation .top .orange{
+    font-family: 'Bebas Neue';
+    color: var(--color-orange);
+    letter-spacing: 0.07rem;
+}
+.reservation .bottom form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.reservation .bottom form .riga-1,
+.reservation .bottom form .riga-2{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 1rem;
+}
+.reservation .bottom form .riga-1 .inp,
+.reservation .bottom form .riga-2 .inp,
+.reservation .bottom form .riga-3{
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+.reservation .bottom form label{
+    font-family: 'Exo 2';
+}
+.reservation .bottom form input,
+.reservation .bottom form select,
+.reservation .bottom form textarea{
+    background-color: rgba(255, 255, 255, 0.04);
+    border: 1px solid #9A9AB0;
+    padding: 1rem;
+    color: var(--color-white);
+    font-family: 'Exo 2';
+    font-size: 1.05rem;
+}
+.reservation .bottom form textarea{
+    resize: none;
+    height: 10rem;
+}
+.reservation .bottom option{
+    background-color: var(--color-black);
+}
+.reservation .btn{
+    background-color: var(--color-orange);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7rem;
+    padding: 1rem 2rem;
+    width: fit-content;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    user-select: none;
+    color: white;
+    border: none;
+}
+.reservation .btn p{
+    font-family: 'Mulish';
+    font-size: 1rem;
+}
+@media(max-width: 60rem){
+    .reservation{
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    .reservation .bottom form .riga-1,
+    .reservation .bottom form .riga-2{
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 1rem;
+    }
+}
+
+/* FOOTER */
+footer{
+    width: 100%;
+    max-width: 80rem;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 3rem;
+    padding-bottom: 4rem;
+}
+footer h4{
+    font-family: 'Exo 2';
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+footer .colonna{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+footer .colonna p{
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+@media(max-width: 60rem){
+    .services{display: none;}
+    nav{padding-left: 1rem;}
+    nav .menu{
+        display: none;
+    }
+    header{overflow-x: hidden;}
+    footer{
+        padding-left: 1rem;
+        padding-right: 1rem;
+        grid-template-columns: 1fr;
+        row-gap: 3rem;
+    }
+    footer a{
+        color: var(--color-white);
+        text-decoration: none;
+    }
 }
