@@ -547,7 +547,7 @@ header .black-fade{
     background: rgba(242, 99, 38, 0.21);
     filter: blur(4rem);
 }
-.hidden{opacity: 0;}
+.hidden{display: none;}
 @media(max-width: 60rem){
     .latest{
         padding-left: 1rem;
