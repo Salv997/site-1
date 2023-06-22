@@ -15,6 +15,7 @@
 body{
     background-color: var(--color-black);
     color: var(--color-white);
+    user-select: none;
 }
 /* NAV */
 nav{
@@ -461,7 +462,6 @@ header .black-fade{
 }
 .events .bottom .card p{
     font-family: 'Exo 2';
-    opacity: 0.7;
 }
 .events .bottom .btn{
     font-family: 'Mulish';
@@ -497,10 +497,6 @@ header .black-fade{
         flex-direction: column;
         gap: 1rem;
     }
-    .events .bottom{
-        flex-direction: column;
-        gap: 1.5rem;
-    }
     .events .bottom .card{
         width: 100%;
         max-width: 30rem;
@@ -532,9 +528,12 @@ header .black-fade{
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
+    z-index: 9999;
 }
-.latest .container img{
+#player{
     width: 100%;
+    height: 35rem;
+    position: relative
 }
 .latest .orange-circle{
     position: absolute;
@@ -547,6 +546,7 @@ header .black-fade{
     background: rgba(242, 99, 38, 0.21);
     filter: blur(4rem);
 }
+.hidden{opacity: 0;}
 @media(max-width: 60rem){
     .latest{
         padding-left: 1rem;
@@ -557,7 +557,7 @@ header .black-fade{
     }
     .latest .orange-circle{display: none;}
     .latest svg{
-        width: 70px;
+        width: 80px;
     }
 }
 /* EQUIPMENT */
@@ -592,6 +592,10 @@ header .black-fade{
     align-items: center;
     justify-content: space-around;
 }
+.swiper{
+    max-width: 80rem;
+    overflow: hidden;
+}
 .equipment .bottom {
     display: flex;
     justify-content: space-between;
@@ -611,10 +615,6 @@ header .black-fade{
     }
     .equipment .top{
         flex-direction: column;
-    }
-    .equipment .bottom {
-        flex-direction: column;
-        gap: 1rem;
     }
     .equipment .bottom .card{
         width: 100%;
@@ -744,9 +744,6 @@ footer .colonna p{
     nav .menu{
         display: none;
     }
-    .arrow-container{
-        display: none!important;
-    }
     header{overflow-x: hidden;}
     footer{
         padding-left: 1rem;
@@ -758,4 +755,19 @@ footer .colonna p{
         color: var(--color-white);
         text-decoration: none;
     }
+}
+
+/* ANIMATIONS */
+.btn.dark{
+    transition: 0.35s ease-in-out;
+}
+.btn.dark:hover{
+    color: var(--color-white);
+    background-color: var(--color-orange);
+}
+.btn.dark svg path{
+    transition: 0.35s ease-in-out;
+}
+.btn.dark:hover svg path{
+    fill: var(--color-white);
 }
