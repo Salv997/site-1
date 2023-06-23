@@ -437,9 +437,32 @@ header .black-fade{
     width: 5.6rem;
     height: 2rem;
     border-radius: 10rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
+    cursor: pointer;
+}
+.events .top .arrow-container .prec{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    border-top-left-radius: 3rem;
+    border-bottom-left-radius: 3rem;
+    transition: 0.3s ease-in-out;
+}
+.events .top .arrow-container .succ{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    border-top-right-radius: 3rem;
+    border-bottom-right-radius: 3rem;
+    transition: 0.4s ease-in-out;
+}
+.events .top .arrow-container .prec:hover,
+.events .top .arrow-container .succ:hover{
+    background-color: rgba(255,255,255,0.2);
 }
 .events .bottom {
     display: flex;
@@ -593,6 +616,29 @@ header .black-fade{
     display: flex;
     align-items: center;
     justify-content: space-around;
+    cursor: pointer;
+}
+.equipment .top .arrow-container .prec{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    border-top-left-radius: 3rem;
+    border-bottom-left-radius: 3rem;
+    transition: 0.3s ease-in-out;
+}
+.equipment .top .arrow-container .succ{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    border-top-right-radius: 3rem;
+    border-bottom-right-radius: 3rem;
+    transition: 0.4s ease-in-out;
+}
+.equipment .top .arrow-container .prec:hover,
+.equipment .top .arrow-container .succ:hover{
+    background-color: rgba(255,255,255,0.2);
 }
 .swiper{
     max-width: 80rem;
