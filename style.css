@@ -160,6 +160,7 @@ header .black-fade{
     background:  linear-gradient(180deg, rgba(0, 0, 0, 0) 29.07%, #03030A 76.61%);;
 }
 @media(max-width: 60rem){
+    .events{overflow-x: hidden;}
     header .grid{
         gap: 2rem;
         padding-left: 1rem;
