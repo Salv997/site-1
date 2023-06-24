@@ -114,16 +114,17 @@ header .grid .btn.cta{
     align-items: center;
     gap: 0.7rem;
     background-color: var(--color-orange);
+    border: 0.2rem solid var(--color-orange);
     width: 13rem;
     justify-content: center;
     text-transform: uppercase;
     padding: 1rem 0;
     border-radius: 50px;
     cursor: pointer;
-    transition: gap 0.15s ease-in-out;
+    transition: 0.2s ease-in-out;
 }
 header .grid .btn.cta:hover{
-    gap: 1rem;
+    background-color: transparent;
 }
 header .grid .btn.cta p{
     font-size: 0.9rem;
@@ -237,6 +238,7 @@ header .black-fade{
     align-items: center;
     justify-content: center;
     font-weight: 700;
+    transition: 0.2s ease-in-out;
 }
 .experience .grid .right{
     display: flex;
@@ -729,6 +731,7 @@ header .black-fade{
 }
 .reservation .btn{
     background-color: var(--color-orange);
+    border: 0.2rem solid var(--color-orange);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -741,7 +744,10 @@ header .black-fade{
     cursor: pointer;
     user-select: none;
     color: white;
-    border: none;
+    transition: 0.2s ease-in-out;
+}
+.reservation .btn:hover{
+    background-color: transparent;
 }
 .reservation .btn p{
     font-family: 'Mulish';
