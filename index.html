@@ -12,7 +12,7 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
    <script src="//cdn.jsdelivr.net/gh/freeps2/a7rarpress@main/swiper-bundle.min.js"></script>
-   <script src="https://www.youtube.com/iframe_api"></script>
+   <script src="https://player.vimeo.com/api/player.js"></script>
 </head>
 <body>
     <script>
@@ -484,11 +484,13 @@
         <div class="orange-circle"></div>
         <h2 data-aos="fade-right">Our latest events</h2>
         <div class="container">
-            <div id="player"></div>
+            <div id="video-wrap" class="video-wrap">
+            <iframe id="player" src="https://player.vimeo.com/video/524933864?h=1ac4fd9fb4&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
             <svg id="playButton" onclick="hideButton()" width="169" height="137" viewBox="0 0 169 137" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="85.6649" cy="69.2295" r="66.852" transform="rotate(-0.604939 85.6649 69.2295)" fill="#F26326"/>
                 <path d="M101.28 62.3435C102.16 62.8113 102.896 63.5097 103.409 64.3637C103.922 65.2178 104.193 66.1953 104.193 67.1917C104.193 68.188 103.922 69.1656 103.409 70.0196C102.896 70.8737 102.16 71.572 101.28 72.0398L77.8142 84.8003C74.0357 86.8553 69.3945 84.1812 69.3945 79.954V54.4312C69.3945 50.2003 74.0357 47.528 77.8142 49.5812L101.28 62.3435Z" fill="white"/>
             </svg>
+            </div>
         </div>
     </section>
     <section class="equipment" data-aos="fade-in" data-aos-duration="1000">
@@ -650,29 +652,13 @@
         function hideButton() {
             var playButton = document.getElementById("playButton");
             playButton.classList.add("hidden"); 
-        }
-        var player;
-        
-        function onYouTubeIframeAPIReady() {
-          player = new YT.Player('player', {
-            videoId: 'gCYcHz2k5x0',
-            playerVars: {
-              autoplay: 0, 
-              controls: 0,
-              showinfo: 0,
-            },
-            events: {
-              'onReady': onPlayerReady,
-            }
-          });
+            const videoWrap = document.getElementById("video-wrap")
+
+            var data = { method: "play" };
+            player.contentWindow.postMessage(JSON.stringify(data), "*");
+
         }
       
-        function onPlayerReady(event) {
-          var playButton = document.getElementById("playButton");
-          playButton.addEventListener("click", function() {
-            player.playVideo(); 
-          });
-        }
       </script>
 </body>
 </html>

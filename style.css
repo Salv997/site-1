@@ -825,3 +825,8 @@ footer .colonna p{
 .btn.dark:hover svg path{
     fill: var(--color-white);
 }
+
+.video-wrap{
+    width: 100%;
+    min-height: 30rem;
+}
