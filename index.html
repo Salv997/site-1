@@ -653,10 +653,8 @@
             var playButton = document.getElementById("playButton");
             playButton.classList.add("hidden"); 
             const videoWrap = document.getElementById("video-wrap")
-
             var data = { method: "play" };
             player.contentWindow.postMessage(JSON.stringify(data), "*");
-
         }
       
       </script>
